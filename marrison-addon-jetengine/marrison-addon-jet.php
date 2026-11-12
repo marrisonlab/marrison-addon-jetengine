@@ -3,7 +3,7 @@
  * Plugin Name: Marrison Addon JetEngine
  * Plugin URI: https://github.com/marrisonlab/marrison-addon-jetengine
  * Description: Modular extensions for JetEngine listings, queries, dynamic fields, and WooCommerce products.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * Author: Angelo Marra
@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 final class Marrison_Addon_Jet {
-	const VERSION = '1.0.1';
+	const VERSION = '1.0.2';
 	const OPTION = 'marrison_addon_jet_modules';
 	const PAGE = 'marrison_addon_jet';
 
@@ -41,6 +41,8 @@ final class Marrison_Addon_Jet {
 		add_action( 'init', [ $this, 'load_translations' ], -1000 );
 		add_action( 'elementor/loaded', [ $this, 'boot_modules' ] );
 		add_action( 'admin_menu', [ $this, 'register_menu' ] );
+		add_action( 'admin_head', [ $this, 'menu_icon_styles' ] );
+		add_action( 'admin_enqueue_scripts', [ $this, 'enqueue_settings_styles' ] );
 		add_action( 'admin_post_marrison_addon_jet_save', [ $this, 'save_modules' ] );
 		add_action( 'update_option_' . self::OPTION, [ $this, 'modules_updated' ], 10, 2 );
 		add_action( 'add_option_' . self::OPTION, [ $this, 'modules_added' ], 10, 2 );
@@ -84,25 +86,48 @@ final class Marrison_Addon_Jet {
 
 	private function module_labels() {
 		return [
-			'listing_title' => [ __( 'Listing Grid Title', 'marrison-addon-jet' ), __( 'Add a title and style controls to the JetEngine Listing Grid.', 'marrison-addon-jet' ) ],
-			'listing_columns' => [ __( 'Listing Columns', 'marrison-addon-jet' ), __( 'Let visitors choose the number of columns in a Listing Grid.', 'marrison-addon-jet' ) ],
-			'query_fallback' => [ __( 'Query Fallback', 'marrison-addon-jet' ), __( 'Use a second Posts Query when the main Listing Grid query returns too few items.', 'marrison-addon-jet' ) ],
-			'dynamic_svg' => [ __( 'Dynamic SVG', 'marrison-addon-jet' ), __( 'Render SVG media inline through JetEngine Dynamic Field callbacks.', 'marrison-addon-jet' ) ],
-			'recently_viewed_products' => [ __( 'Recently Viewed Products', 'marrison-addon-jet' ), __( 'Use recently viewed WooCommerce product IDs in a JetEngine query.', 'marrison-addon-jet' ) ],
-			'read_more' => [ __( 'Read More', 'marrison-addon-jet' ), __( 'Add an expandable excerpt to JetEngine Dynamic Field and Elementor Text Editor widgets.', 'marrison-addon-jet' ) ],
-			'ticker' => [ __( 'Content Ticker', 'marrison-addon-jet' ), __( 'Display scrolling content from a JetEngine query or manually entered items.', 'marrison-addon-jet' ) ],
+			'listing_title' => [ __( 'Listing Grid Title', 'marrison-addon-jet' ), __( 'Add a title and style controls to the JetEngine Listing Grid.', 'marrison-addon-jet' ), 'dashicons-heading' ],
+			'listing_columns' => [ __( 'Listing Columns', 'marrison-addon-jet' ), __( 'Let visitors choose the number of columns in a Listing Grid.', 'marrison-addon-jet' ), 'dashicons-grid-view' ],
+			'query_fallback' => [ __( 'Query Fallback', 'marrison-addon-jet' ), __( 'Use a second Posts Query when the main Listing Grid query returns too few items.', 'marrison-addon-jet' ), 'dashicons-randomize' ],
+			'dynamic_svg' => [ __( 'Dynamic SVG', 'marrison-addon-jet' ), __( 'Render SVG media inline through JetEngine Dynamic Field callbacks.', 'marrison-addon-jet' ), 'dashicons-format-image' ],
+			'recently_viewed_products' => [ __( 'Recently Viewed Products', 'marrison-addon-jet' ), __( 'Use recently viewed WooCommerce product IDs in a JetEngine query.', 'marrison-addon-jet' ), 'dashicons-visibility' ],
+			'read_more' => [ __( 'Read More', 'marrison-addon-jet' ), __( 'Add an expandable excerpt to JetEngine Dynamic Field and Elementor Text Editor widgets.', 'marrison-addon-jet' ), 'dashicons-editor-expand' ],
+			'ticker' => [ __( 'Content Ticker', 'marrison-addon-jet' ), __( 'Display scrolling content from a JetEngine query or manually entered items.', 'marrison-addon-jet' ), 'dashicons-controls-forward' ],
 		];
 	}
 
 	public function register_menu() {
 		add_menu_page(
 			__( 'Marrison Addon JetEngine', 'marrison-addon-jet' ),
-			__( 'Marrison Addon JetEngine', 'marrison-addon-jet' ),
+			'MAJ',
 			'manage_options',
 			self::PAGE,
 			[ $this, 'render_settings' ],
-			plugins_url( 'assets/icon.svg', __FILE__ )
+			'dashicons-admin-generic'
 		);
+	}
+
+	public function menu_icon_styles() {
+		$icon_url = esc_url( plugins_url( 'assets/icon.svg', __FILE__ ) );
+		?>
+		<style>
+			#toplevel_page_marrison_addon_jet .wp-menu-image::before { display: none; }
+			#toplevel_page_marrison_addon_jet .wp-menu-image {
+				background-color: currentColor;
+				-webkit-mask: url('<?php echo $icon_url; ?>') center / 20px no-repeat;
+				mask: url('<?php echo $icon_url; ?>') center / 20px no-repeat;
+			}
+		</style>
+		<?php
+	}
+
+	public function enqueue_settings_styles( $screen ) {
+		if ( 'toplevel_page_' . self::PAGE !== $screen ) {
+			return;
+		}
+
+		$path = 'assets/css/marrison-jet-admin.css';
+		wp_enqueue_style( 'marrison-jet-admin', plugins_url( $path, __FILE__ ), [ 'dashicons' ], self::asset_version( $path ) );
 	}
 
 	public function settings_link( $links ) {
@@ -126,17 +151,31 @@ final class Marrison_Addon_Jet {
 			<form method="post" action="<?php echo esc_url( admin_url( 'admin-post.php' ) ); ?>">
 				<input type="hidden" name="action" value="marrison_addon_jet_save">
 				<?php wp_nonce_field( 'marrison_addon_jet_save' ); ?>
-				<table class="widefat striped">
-					<thead><tr><th scope="col"><?php esc_html_e( 'Module', 'marrison-addon-jet' ); ?></th><th scope="col"><?php esc_html_e( 'Description', 'marrison-addon-jet' ); ?></th></tr></thead>
-					<tbody>
-					<?php foreach ( $this->module_labels() as $id => [ $title, $description ] ) : ?>
-						<?php $reason = $this->unavailable_reason( $id, self::MODULES[ $id ][2] ); ?>
-						<tr>
-							<th scope="row"><label><input type="checkbox" name="modules[]" value="<?php echo esc_attr( $id ); ?>" <?php checked( ! empty( $enabled[ $id ] ) ); ?> <?php disabled( '' !== $reason && empty( $enabled[ $id ] ) ); ?>> <?php echo esc_html( $title ); ?></label></th>
-							<td>
-								<?php echo esc_html( $description ); ?>
-								<?php if ( $reason ) : ?>
-									<p class="description">
+				<div class="marrison-jet-modules">
+					<?php foreach ( $this->module_labels() as $id => [ $title, $description, $icon ] ) : ?>
+						<?php
+						$reason = $this->unavailable_reason( $id, self::MODULES[ $id ][2] );
+						$active = ! empty( $enabled[ $id ] );
+						$title_id = 'marrison-jet-title-' . $id;
+						$reason_id = 'marrison-jet-requirement-' . $id;
+						?>
+						<div class="marrison-jet-card">
+							<div class="marrison-jet-card-header">
+								<div class="marrison-jet-card-heading">
+									<span class="dashicons <?php echo esc_attr( $icon ); ?>" aria-hidden="true"></span>
+									<h2 id="<?php echo esc_attr( $title_id ); ?>"><?php echo esc_html( $title ); ?></h2>
+								</div>
+								<label class="marrison-jet-switch">
+									<input type="checkbox" role="switch" name="modules[]" value="<?php echo esc_attr( $id ); ?>"
+										aria-labelledby="<?php echo esc_attr( $title_id ); ?>"
+										<?php if ( $reason ) : ?>aria-describedby="<?php echo esc_attr( $reason_id ); ?>"<?php endif; ?>
+										<?php checked( $active ); ?> <?php disabled( '' !== $reason && ! $active ); ?>>
+									<span class="marrison-jet-slider" aria-hidden="true"></span>
+								</label>
+							</div>
+							<p class="marrison-jet-card-description"><?php echo esc_html( $description ); ?></p>
+							<?php if ( $reason ) : ?>
+								<p class="description marrison-jet-card-requirement" id="<?php echo esc_attr( $reason_id ); ?>">
 									<?php
 									if ( 'original' === $reason ) {
 										esc_html_e( 'This module is running in the original Marrison Addon. Disable it there to use it here.', 'marrison-addon-jet' );
@@ -145,13 +184,11 @@ final class Marrison_Addon_Jet {
 										echo esc_html( sprintf( __( 'Requires an active installation of %s.', 'marrison-addon-jet' ), $reason ) );
 									}
 									?>
-									</p>
-								<?php endif; ?>
-							</td>
-						</tr>
+								</p>
+							<?php endif; ?>
+						</div>
 					<?php endforeach; ?>
-					</tbody>
-				</table>
+				</div>
 				<?php submit_button(); ?>
 			</form>
 		</div>
