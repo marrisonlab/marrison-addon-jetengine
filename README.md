@@ -1,117 +1,94 @@
 # Marrison Addon JetEngine
 
-**Sette moduli gratuiti per le griglie, le query e i campi dinamici di JetEngine.**
+**Seven free modules for JetEngine listings, queries, and dynamic fields.**
 
-Marrison Addon JetEngine (MAJ) è un fork di [Marrison Addon](https://github.com/marrisonlab/marrison-addon), il plugin originale, più completo e sempre gratuito. MAJ raccoglie le funzionalità dedicate a JetEngine in un plugin autonomo.
+Marrison Addon JetEngine (MAJ) is a standalone fork focused on JetEngine. Its original, more comprehensive plugin is also free. [Marrison Addon](https://github.com/marrisonlab/marrison-addon)
 
-[Scarica lo ZIP installabile](marrison-addon-jetengine.zip) · [Release su GitHub](https://github.com/marrisonlab/marrison-addon-jetengine/releases) · [Guida ai moduli](#guida-ai-moduli)
+[Download the installable ZIP](marrison-addon-jetengine.zip) · [GitHub releases](https://github.com/marrisonlab/marrison-addon-jetengine/releases) · [Module guide](#module-guide)
 
-> **Zero payload per i moduli spenti.** MAJ carica i file PHP di un modulo e registra i suoi hook solo quando il modulo è attivo e le dipendenze sono disponibili. Un modulo spento non aggiunge CSS o JavaScript al sito. Il nucleo di MAJ gestisce il pannello e gli aggiornamenti.
+> **Zero payload from disabled modules.** MAJ loads a module's PHP files and registers its hooks only when the module is enabled and its dependencies are available. A disabled module adds no CSS or JavaScript to the site. The MAJ core handles the settings panel and updates.
 
-## Installazione
+## Installation
 
-**Requisiti** · WordPress 6.0 o superiore, PHP 7.4 o superiore e JetEngine attivo. Alcuni moduli richiedono anche Elementor o WooCommerce.
+**Requirements** · WordPress 6.0 or later, PHP 7.4 or later, and an active JetEngine installation. Some modules also require Elementor or WooCommerce.
 
-1. Scarica lo ZIP installabile. In WordPress apri **Plugin → Aggiungi nuovo → Carica plugin**, seleziona lo ZIP e attiva **Marrison Addon JetEngine**.
-2. Apri **MAJ** nel menu di WordPress. I moduli partono tutti spenti.
-3. Accendi i moduli che ti servono e salva. La scheda di ciascun modulo indica se manca una dipendenza.
+1. Download the installable ZIP. In WordPress, go to **Plugins → Add New → Upload Plugin**, select the ZIP, and activate **Marrison Addon JetEngine**.
+2. Open **MAJ** in the WordPress menu. All modules start disabled.
+3. Enable the modules you need and save. Each module card shows any missing dependency.
 
-Puoi usare MAJ insieme a Marrison Addon. Le impostazioni di attivazione sono indipendenti. Per passare un modulo a MAJ, spegnilo nel plugin originale e poi accendilo in MAJ. I widget e le configurazioni salvate conservano gli stessi identificatori. Se il modulo è attivo nell'originale, quest'ultimo ha la precedenza.
+MAJ and Marrison Addon can run side by side with independent module settings. To move a module to MAJ, disable it in Marrison Addon, then enable it in MAJ. Existing widgets and saved configurations use the same identifiers. If a module is enabled in both plugins, Marrison Addon takes precedence.
 
-## Guida ai moduli
+## Module guide
 
-| Modulo | Cosa aggiunge | Oltre a JetEngine |
+| Module | What it adds | Additional requirement |
 | --- | --- | --- |
-| [Listing Grid Title](#listing-grid-title) | Titolo sopra una griglia | Elementor |
-| [Listing Columns](#listing-columns) | Pulsanti per cambiare il numero di colonne | Elementor |
-| [Query Fallback](#query-fallback) | Query di riserva per la griglia | Elementor |
-| [Dynamic SVG](#dynamic-svg) | SVG inline da un campo dinamico | Estensione PHP DOM |
-| [Recently Viewed Products](#recently-viewed-products) | Prodotti visitati di recente nel browser | WooCommerce |
-| [Read More](#read-more) | Testo espandibile con un pulsante | Elementor |
-| [Content Ticker](#content-ticker) | Testo scorrevole da una query o da voci manuali | Elementor |
+| [Listing Grid Title](#listing-grid-title) | A title above a grid | Elementor |
+| [Listing Columns](#listing-columns) | Buttons for changing the number of columns | Elementor |
+| [Query Fallback](#query-fallback) | A backup query for a grid | Elementor |
+| [Dynamic SVG](#dynamic-svg) | Inline SVG from a dynamic field | PHP DOM extension |
+| [Recently Viewed Products](#recently-viewed-products) | Products recently viewed in the visitor's browser | WooCommerce |
+| [Read More](#read-more) | Collapsible text with an expand button | Elementor |
+| [Content Ticker](#content-ticker) | Scrolling text from a query or manually entered items | Elementor |
 
-Prima di configurare un modulo, attivalo in **MAJ** e salva.
+Before setting up a module, enable it in **MAJ** and save.
 
 ### Listing Grid Title
 
-1. In Elementor, seleziona il widget **Listing Grid** e apri **Contenuto → Listing Grid Title**.
-2. Attiva **Show title**, scrivi il titolo o scegli un tag dinamico. Imposta il tag HTML, ad esempio `H2`, e aggiungi un link se serve.
-3. In **Stile → Listing Grid Title** regola tipografia, colori e spaziatura. Il titolo appare sopra la griglia.
+1. In Elementor, select the **Listing Grid** widget and open **Content → Listing Grid Title**.
+2. Turn on **Show title** and enter a title or select a dynamic tag. Choose an HTML tag such as `H2` and add a link if needed.
+3. Open **Style → Listing Grid Title** to adjust typography, colors, and spacing. The title appears above the grid.
 
 ### Listing Columns
 
-1. Seleziona una **Listing Grid** normale e assegna **Avanzato → ID CSS → `catalogo`**.
-2. Aggiungi il widget **Listing Columns** vicino alla griglia. In **Listing CSS selector** scrivi `#catalogo`. Puoi usare una classe condivisa per controllare più griglie.
-3. Imposta il numero minimo, massimo e iniziale di colonne per dispositivo. Con **Remember selection** il browser ricorda la scelta del visitatore.
-4. Personalizza pulsanti e icone e prova il cambio di colonne sul sito. Sotto **Minimum viewport width** la griglia usa il proprio layout responsive. Il modulo è pensato per griglie regolari. Slider e masonry sono esclusi.
+1. Select a regular **Listing Grid**. Under **Advanced → CSS ID**, enter `catalog`.
+2. Add the **Listing Columns** widget near the grid. Enter `#catalog` in **Listing CSS selector**. Use a shared CSS class to control several grids with one widget.
+3. Set the minimum, maximum, and initial number of columns for each device. Enable **Remember selection** to save the visitor's choice in their browser.
+4. Customize the buttons and icons, then try switching columns on the published page. Below **Minimum viewport width**, the grid uses its own responsive layout. The module supports regular grids. Slider and masonry layouts are excluded.
 
 ### Query Fallback
 
-1. In **JetEngine → Query Builder**, salva due **Posts Query** distinte. Ad esempio, usa i prodotti della categoria corrente come query principale e una selezione di prodotti in evidenza come riserva.
-2. Nella **Listing Grid** di Elementor apri **Custom Query**, attiva **Use Custom Query** e seleziona la query principale.
-3. Attiva **Enable Query Fallback** e scegli la query di riserva in **Fallback Query**.
-4. Scegli **Only when empty** per usare la riserva quando la principale restituisce zero elementi. Scegli **Fill missing items** per aggiungere elementi senza duplicati fino al limite della query principale.
+1. In **JetEngine → Query Builder**, save two distinct **Posts Query** configurations. For example, use products in the current category as the primary query and featured products as the fallback.
+2. In Elementor's **Listing Grid**, open **Custom Query**, turn on **Use Custom Query**, and select the primary query.
+3. Turn on **Enable Query Fallback** and select the backup in **Fallback Query**.
+4. Choose **Only when empty** to use the backup when the primary query returns zero items. Choose **Fill missing items** to add unique results up to the primary query's item limit.
 
-Usalo con griglie a pagina singola. Il fallback si sospende con filtri applicati, paginazione, Load More, Lazy Load, modalità archivio o numero casuale di risultati.
+Use this module with single-page grids. The fallback pauses when filters are applied or when the grid uses pagination, Load More, Lazy Load, archive mode, or a randomized item count.
 
 ### Dynamic SVG
 
-1. Associa un SVG locale della Libreria media a un campo **Media** di JetEngine, con valore ID o URL.
-2. Nel template del listing aggiungi **Dynamic Field** e seleziona quel campo come sorgente.
-3. Attiva **Filter field output**. In **Callback**, scegli **Marrison – Inline SVG** per mantenere i colori del file o **Marrison – Inline SVG (Current Color)** per far ereditare al disegno il colore del testo.
-4. Controlla il risultato sul sito. Il modulo verifica e sanitizza il file prima di inserirlo inline. [Guida a Dynamic Field](https://crocoblock.com/knowledge-base/jetengine/dynamic-field-widget-overview/)
+1. Select a local SVG from the WordPress Media Library in a JetEngine **Media** field configured to store an attachment ID or URL.
+2. Add a **Dynamic Field** to the listing template and select that field as its source.
+3. Turn on **Filter field output**. Under **Callback**, choose **Marrison – Inline SVG** to keep the original colors or **Marrison – Inline SVG (Current Color)** to inherit the text color.
+4. Check the result on the published page. The module validates and sanitizes the file before rendering it inline. [Dynamic Field guide](https://crocoblock.com/knowledge-base/jetengine/dynamic-field-widget-overview/)
 
 ### Recently Viewed Products
 
-1. In **JetEngine → Query Builder**, crea una **Posts Query** con **Post Type → Products**. Disattiva **Cache Query**, perché il risultato dipende dal cookie del visitatore.
-2. In **Post & Page → Post In**, seleziona la macro **Recently Viewed Products**. Di default **Limit** è `12` ed **Exclude current product** è **Yes**.
-3. In **Order By**, scegli l'opzione che mantiene l'ordine degli ID di **Post In** per visualizzare prima il prodotto visitato più di recente.
-4. Nella **Listing Grid** seleziona un template per i prodotti e collega la query con **Custom Query → Use Custom Query**. [Guida alle macro in Query Builder](https://crocoblock.com/knowledge-base/jetengine/macros-for-query-builder/)
+1. In **JetEngine → Query Builder**, create a **Posts Query** and set **Post Type** to **Products**. Turn off **Cache Query**, since the results depend on the visitor's cookie.
+2. In **Post & Page → Post In**, select the **Recently Viewed Products** macro. By default, **Limit** is `12` and **Exclude current product** is set to **Yes**.
+3. Under **Order By**, select the option that preserves the ID order from **Post In**. This displays the most recently viewed product first.
+4. In the **Listing Grid**, select a product listing template and connect the query under **Custom Query → Use Custom Query**. [Query Builder macros guide](https://crocoblock.com/knowledge-base/jetengine/macros-for-query-builder/)
 
-Per provarlo, visita tre schede prodotto nello stesso browser. Con la griglia sulla terza scheda e l'esclusione attiva, vedrai le prime due in ordine inverso di visita. Con lo storico vuoto la griglia restituisce zero prodotti.
+To test it, visit three different product pages in the same browser. With the grid on the third page and the current product excluded, the second product appears first, followed by the first product. The grid shows zero products when the visitor's history is empty.
 
 ### Read More
 
-1. In Elementor, apri un widget **Text Editor** o **Dynamic Field** con un testo abbastanza lungo.
-2. In **Contenuto → Marrison — Read More**, attiva **Enable Read More** e scegli quante righe mostrare a testo chiuso.
-3. Personalizza le etichette di apertura e chiusura, ad esempio «Leggi di più» e «Leggi di meno». In **Stile → Read More** regola l'aspetto del pulsante.
-4. Verifica il testo pubblicato a diverse larghezze. Il pulsante appare quando il contenuto supera le righe impostate.
+1. In Elementor, open a **Text Editor** or **Dynamic Field** widget that contains a long block of text.
+2. In **Content → Marrison — Read More**, turn on **Enable Read More** and set how many lines to show when collapsed.
+3. Set the expand and collapse labels, such as “Read more” and “Read less.” Customize the button in **Style → Read More**.
+4. Check the published page at different widths. The button appears when the text exceeds the number of visible lines.
 
 ### Content Ticker
 
-1. Aggiungi il widget **Ticker** in Elementor e apri **Contenuto → Source**.
-2. Con **Manual (Repeater)** aggiungi le voci in **Ticker Items**, ciascuna con un testo e un link facoltativo.
-3. Per alimentarlo da JetEngine, scegli **JetEngine Query** e seleziona la query. Indica il campo o la macro da usare per testo e link. Per un elenco di articoli, puoi usare `post_title` e `permalink`.
-4. Imposta icona separatrice, direzione, durata dello scorrimento e pausa al passaggio del mouse. Controlla l'anteprima prima di pubblicare.
+1. Add the **Ticker** widget in Elementor and open **Content → Source**.
+2. With **Manual (Repeater)** selected, add entries under **Ticker Items**. Each entry can have text and an optional link.
+3. To use dynamic content, choose **JetEngine Query** and select a query. Set the field or macro for the text and link. For a list of posts, use `post_title` and `permalink`.
+4. Set the separator icon, scroll direction, animation duration, and pause-on-hover behavior. Check the preview before publishing.
 
-## Aggiornamenti da GitHub
+## Languages and license
 
-Dalla versione **1.0.1**, MAJ cerca le nuove release stabili su GitHub. Quando è disponibile una versione più recente, aggiornala dalla voce del plugin in **Plugin installati**. L'updater verifica lo SHA-256 del pacchetto e prepara i file con il nome della cartella già installata.
+English is the source language. The plugin includes Italian, Ukrainian, and Arabic translations. WordPress uses the site locale or the user's preferred dashboard language as appropriate. [Translation catalogs](marrison-addon-jetengine/languages/)
 
-A partire dalla versione 1.0.2, la versione compare **nel nome del file ZIP**. La cartella interna dei nuovi pacchetti è sempre **`marrison-addon-jetengine/`**, senza numero di versione.
-
-```text
-marrison-addon-jetengine-X.Y.Z.zip
-└── marrison-addon-jetengine/
-    ├── marrison-addon-jet.php
-    ├── assets/
-    ├── includes/
-    └── languages/
-```
-
-Per un aggiornamento manuale usa lo ZIP allegato alla release. Controlla che la sua cartella interna coincida con quella presente in `wp-content/plugins/` prima di caricarlo. Se hai già un'installazione con un nome diverso, usa l'aggiornamento integrato oppure prepara una copia dello ZIP con la stessa cartella dell'installazione. In WordPress seleziona **Sostituisci l'attuale con quella caricata** quando compare. Gli archivi automatici **Source code (zip)** di GitHub sono destinati alla consultazione dei sorgenti.
-
-### Preparare una release
-
-1. Allinea la versione nell'intestazione PHP e in `Marrison_Addon_Jet::VERSION`.
-2. Comprimi la cartella [marrison-addon-jetengine](marrison-addon-jetengine/). Apri lo ZIP e verifica che l'unica cartella alla radice sia `marrison-addon-jetengine/` e che contenga direttamente il file PHP principale.
-3. Pubblica una release stabile con tag `vX.Y.Z` e allega `marrison-addon-jetengine-X.Y.Z.zip`. Usa lo stesso contenuto per lo ZIP installabile nella radice del repository.
-
-## Lingue e licenza
-
-La lingua sorgente è l'inglese. Il plugin include le traduzioni in ucraino e arabo, caricate in base alla lingua di WordPress o del profilo utente nel pannello. I cataloghi sono nella [cartella languages](marrison-addon-jetengine/languages/).
-
-Puoi aggiornare i cataloghi con WP-CLI dalla radice del repository.
+To update the catalogs with WP-CLI, run these commands from the repository root.
 
 ```sh
 cd marrison-addon-jetengine
@@ -119,4 +96,4 @@ wp i18n make-pot . languages/marrison-addon-jet.pot --domain=marrison-addon-jet
 wp i18n make-mo languages
 ```
 
-Licenza [GPL-3.0-or-later](https://www.gnu.org/licenses/gpl-3.0.html), ereditata da Marrison Addon.
+MAJ inherits its license from Marrison Addon. [GPL-3.0-or-later](https://www.gnu.org/licenses/gpl-3.0.html)
