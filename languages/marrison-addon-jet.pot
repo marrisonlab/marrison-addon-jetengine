@@ -1,0 +1,656 @@
+# Marrison Addon JetEngine translation catalog.
+# Distributed under GPL-3.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: Marrison Addon JetEngine 1.0.0\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: marrison-addon-jet\n"
+
+#. translators: %d: number of columns in the listing.
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:149
+#, php-format
+msgid "%d column"
+msgid_plural "%d columns"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:36
+msgid "Above"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:37
+msgid "Accessible label"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:65
+msgid "Active"
+msgstr ""
+
+#: marrison-addon-jet.php:86
+msgid "Add a title and style controls to the JetEngine Listing Grid."
+msgstr ""
+
+#: marrison-addon-jet.php:91
+msgid "Add an expandable excerpt to JetEngine Dynamic Field and Elementor Text Editor widgets."
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:36
+msgid "After"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-listing-title.php:111 includes/modules/class-marrison-addon-read-more.php:130 includes/modules/listing-columns/widgets/listing-columns-widget.php:46
+msgid "Alignment"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:25
+msgid "Assign a CSS ID to the Listing Grid widget (e.g. catalog) and enter #catalog here, or use a class (e.g. .listing-grid). One selector can control several grids. Use with regular grids only."
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:377
+msgid "Baseline"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:36
+msgid "Before"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:31
+msgid "Below this width, the buttons are hidden and the grid uses its responsive columns. Enter 0 to show buttons on all devices."
+msgstr ""
+
+#: includes/modules/class-marrison-addon-listing-title.php:197 includes/modules/class-marrison-addon-read-more.php:207 includes/modules/listing-columns/widgets/listing-columns-widget.php:60
+msgid "Border Radius"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:376
+msgid "Bottom"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:52
+msgid "Button gap"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:40
+msgid "Button text"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:56
+msgid "Buttons"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:34
+msgid "Buttons and icons"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-listing-title.php:119 includes/modules/class-marrison-addon-read-more.php:138 includes/modules/listing-columns/widgets/listing-columns-widget.php:48
+msgid "Center"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-read-more.php:89
+msgid "Closed status text"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:39
+msgid "Column count"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:135
+msgid "Content"
+msgstr ""
+
+#: marrison-addon-jet.php:92
+msgid "Content Ticker"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:41
+msgid "Custom icon"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:226 includes/modules/ticker/widgets/ticker-widget.php:270
+msgid "Custom Key"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:295
+msgid "Custom Link Key"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:251
+msgid "Custom Text Key"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:42
+msgid "Customize individual buttons"
+msgstr ""
+
+#: marrison-addon-jet.php:129
+msgid "Description"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:51 includes/modules/ticker/widgets/ticker-widget.php:322
+msgid "Direction"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-query-fallback.php:88
+msgid "Disable Load More, Lazy Load, archive mode, and random item counts to use the fallback query."
+msgstr ""
+
+#: marrison-addon-jet.php:92
+msgid "Display scrolling content from a JetEngine query or manually entered items."
+msgstr ""
+
+#: marrison-addon-jet.php:89
+msgid "Dynamic SVG"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-query-fallback.php:28
+msgid "Enable Query Fallback"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-read-more.php:60
+msgid "Enable Read More"
+msgstr ""
+
+#: includes/modules/recently-viewed-products/macros/recently-viewed-products.php:28
+msgid "Exclude current product"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-query-fallback.php:43
+msgid "Fallback Mode"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-query-fallback.php:81
+msgid "Fallback paused because Lazy Load is enabled."
+msgstr ""
+
+#: includes/modules/class-marrison-addon-query-fallback.php:80
+msgid "Fallback paused because Load More is enabled."
+msgstr ""
+
+#: includes/modules/class-marrison-addon-query-fallback.php:83
+msgid "Fallback paused because random item counts are enabled."
+msgstr ""
+
+#: includes/modules/class-marrison-addon-query-fallback.php:82
+msgid "Fallback paused because the listing is set to archive mode."
+msgstr ""
+
+#: includes/modules/class-marrison-addon-query-fallback.php:86
+msgid "Fallback paused because this JetEngine version cannot verify query context."
+msgstr ""
+
+#: includes/modules/class-marrison-addon-query-fallback.php:37
+msgid "Fallback Query"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:297
+msgid "Field key (e.g., permalink) or macro."
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:253
+msgid "Field key (e.g., post_title) or macro."
+msgstr ""
+
+#: includes/modules/class-marrison-addon-query-fallback.php:49
+msgid "Fill missing items"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:65
+msgid "Focus"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:53
+msgid "Group padding"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:51
+msgid "Horizontal"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:65
+msgid "Hover"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-listing-title.php:161 includes/modules/class-marrison-addon-read-more.php:179
+msgid "Hover Color"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-listing-title.php:58
+msgid "HTML Tag"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-listing-title.php:84 includes/modules/ticker/widgets/ticker-widget.php:175
+msgid "https://your-link.com"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:419
+msgid "Icon"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:35
+msgid "Icon and number"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:63
+msgid "Icon and text gap"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:68 includes/modules/ticker/widgets/ticker-widget.php:428
+msgid "Icon Color"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:35
+msgid "Icon only"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:463
+msgid "Icon Padding"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:36
+msgid "Icon position"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:440
+msgid "Icon Size"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:77
+msgid "Icons"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:27
+msgid "Initial columns"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:190
+msgid "Item #1"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:193
+msgid "Item #2"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:148
+msgid "JetEngine Query"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-listing-title.php:127 includes/modules/class-marrison-addon-read-more.php:146
+msgid "Justified"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:45
+msgid "Layout"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:40
+msgid "Leave blank to display the number of columns."
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:41
+msgid "Leave blank to use the automatic SVG grid. You can choose an icon from the Elementor library or upload an SVG."
+msgstr ""
+
+#: includes/modules/class-marrison-addon-listing-title.php:115 includes/modules/class-marrison-addon-read-more.php:134 includes/modules/listing-columns/widgets/listing-columns-widget.php:47 includes/modules/ticker/widgets/ticker-widget.php:326
+msgid "Left"
+msgstr ""
+
+#: marrison-addon-jet.php:87
+msgid "Let visitors choose the number of columns in a Listing Grid."
+msgstr ""
+
+#: includes/modules/recently-viewed-products/macros/recently-viewed-products.php:21
+msgid "Limit"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-read-more.php:73
+msgid "Lines to show"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-listing-title.php:82 includes/modules/ticker/widgets/ticker-widget.php:173
+msgid "Link"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:281
+msgid "Link Field"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:408
+msgid "Link Hover Color"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:265
+msgid "Link Source"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:20
+msgid "Listing and columns"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:12 marrison-addon-jet.php:87
+msgid "Listing Columns"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:22
+msgid "Listing CSS selector"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-listing-title.php:100 includes/modules/class-marrison-addon-listing-title.php:21 marrison-addon-jet.php:86
+msgid "Listing Grid Title"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:147
+msgid "Manual (Repeater)"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-listing-title.php:229 includes/modules/class-marrison-addon-read-more.php:231
+msgid "Margin"
+msgstr ""
+
+#: marrison-addon-jet.php:119 marrison-addon-jet.php:3 marrison-addon-jet.php:98 marrison-addon-jet.php:99
+msgid "Marrison Addon JetEngine"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-dynamic-svg.php:28 includes/modules/class-marrison-addon-dynamic-svg.php:42
+msgid "Marrison – Inline SVG"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-dynamic-svg.php:33 includes/modules/class-marrison-addon-dynamic-svg.php:43
+msgid "Marrison – Inline SVG (Current Color)"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-read-more.php:52
+msgid "Marrison — Read More"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:27
+msgid "Maximum columns"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:375
+msgid "Middle"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:27
+msgid "Minimum columns"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:62
+msgid "Minimum height"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:31
+msgid "Minimum viewport width (px)"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:61
+msgid "Minimum width"
+msgstr ""
+
+#: marrison-addon-jet.php:4
+msgid "Modular extensions for JetEngine listings, queries, dynamic fields, and WooCommerce products."
+msgstr ""
+
+#: marrison-addon-jet.php:129
+msgid "Module"
+msgstr ""
+
+#: marrison-addon-jet.php:121
+msgid "Module settings could not be saved."
+msgstr ""
+
+#: marrison-addon-jet.php:123
+msgid "Module settings saved."
+msgstr ""
+
+#: includes/modules/class-marrison-addon-listing-title.php:32 includes/modules/class-marrison-addon-read-more.php:63 includes/modules/recently-viewed-products/macros/recently-viewed-products.php:33 includes/modules/ticker/widgets/ticker-widget.php:350
+msgid "No"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:65
+msgid "Normal"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:144 includes/modules/listing-columns/widgets/listing-columns-widget.php:37
+msgid "Number of columns"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:35
+msgid "Number only"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-query-fallback.php:48
+msgid "Only when empty"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-read-more.php:103
+msgid "Open status text"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-listing-title.php:217 includes/modules/class-marrison-addon-read-more.php:219 includes/modules/listing-columns/widgets/listing-columns-widget.php:59 includes/modules/ticker/widgets/ticker-widget.php:500
+msgid "Padding"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:347
+msgid "Pause on Hover"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:98
+msgid "Permalink (URL)"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:97
+msgid "Post Content"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:96
+msgid "Post Excerpt"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:95
+msgid "Post ID"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:94
+msgid "Post Title"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:208
+msgid "Query"
+msgstr ""
+
+#: marrison-addon-jet.php:88
+msgid "Query Fallback"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-read-more.php:105 includes/modules/class-marrison-addon-read-more.php:282
+msgid "Read Less"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-read-more.php:119 includes/modules/class-marrison-addon-read-more.php:278 includes/modules/class-marrison-addon-read-more.php:91 marrison-addon-jet.php:91
+msgid "Read More"
+msgstr ""
+
+#: includes/modules/recently-viewed-products/macros/recently-viewed-products.php:15 marrison-addon-jet.php:90
+msgid "Recently Viewed Products"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:30
+msgid "Remember selection"
+msgstr ""
+
+#: marrison-addon-jet.php:89
+msgid "Render SVG media inline through JetEngine Dynamic Field callbacks."
+msgstr ""
+
+#. translators: %s: required plugin name.
+#: marrison-addon-jet.php:144
+#, php-format
+msgid "Requires an active installation of %s."
+msgstr ""
+
+#: includes/modules/class-marrison-addon-listing-title.php:123 includes/modules/class-marrison-addon-read-more.php:142 includes/modules/listing-columns/widgets/listing-columns-widget.php:49 includes/modules/ticker/widgets/ticker-widget.php:327
+msgid "Right"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:30
+msgid "Save the selection in the browser per page, selector, and breakpoint. This feature is disabled in the editor."
+msgstr ""
+
+#: includes/modules/class-marrison-addon-query-fallback.php:35 includes/modules/class-marrison-addon-query-fallback.php:76
+msgid "Select a query"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:225 includes/modules/ticker/widgets/ticker-widget.php:269
+msgid "Select Field/Macro"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:211
+msgid "Select the JetEngine Query."
+msgstr ""
+
+#: includes/modules/class-marrison-addon-query-fallback.php:87
+msgid "Select two distinct, available Posts Queries to use the fallback."
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:93
+msgid "Select..."
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:309
+msgid "Separator Icon"
+msgstr ""
+
+#: marrison-addon-jet.php:108
+msgid "Settings"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:35
+msgid "Show"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-listing-title.php:29
+msgid "Show title"
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:78
+msgid "Size"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:143
+msgid "Source"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:335
+msgid "Speed (seconds)"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:362
+msgid "Style"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-query-fallback.php:55
+msgid "Supports Posts Queries on single-page grids. The primary query sets the limit. The fallback pauses when filters are applied."
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:79
+msgid "SVG grid stroke width"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:105
+msgid "Term Archive URL"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:103
+msgid "Term Description"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:101
+msgid "Term ID"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:100
+msgid "Term Name"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:102
+msgid "Term Slug"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:104
+msgid "Term Taxonomy"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:160
+msgid "Text"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-listing-title.php:149 includes/modules/class-marrison-addon-read-more.php:168 includes/modules/listing-columns/widgets/listing-columns-widget.php:67 includes/modules/ticker/widgets/ticker-widget.php:396
+msgid "Text Color"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:237
+msgid "Text Field"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:221
+msgid "Text Source"
+msgstr ""
+
+#: marrison-addon-jet.php:141
+msgid "This module is running in the original Marrison Addon. Disable it there to use it here."
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:99
+msgid "Thumbnail URL"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:44
+msgid "Ticker"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:162
+msgid "Ticker Item"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:185
+msgid "Ticker Items"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:340
+msgid "Time in seconds for the text to cross the container."
+msgstr ""
+
+#: includes/modules/class-marrison-addon-listing-title.php:42
+msgid "Title"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:374
+msgid "Top"
+msgstr ""
+
+#: marrison-addon-jet.php:88
+msgid "Use a second Posts Query when the main Listing Grid query returns too few items."
+msgstr ""
+
+#: marrison-addon-jet.php:90
+msgid "Use recently viewed WooCommerce product IDs in a JetEngine query."
+msgstr ""
+
+#: includes/modules/listing-columns/widgets/listing-columns-widget.php:51
+msgid "Vertical"
+msgstr ""
+
+#: includes/modules/ticker/widgets/ticker-widget.php:370
+msgid "Vertical Alignment"
+msgstr ""
+
+#: includes/modules/class-marrison-addon-listing-title.php:31 includes/modules/class-marrison-addon-read-more.php:62 includes/modules/recently-viewed-products/macros/recently-viewed-products.php:32 includes/modules/ticker/widgets/ticker-widget.php:349
+msgid "Yes"
+msgstr ""
+
+#: marrison-addon-jet.php:162
+msgid "You do not have permission to manage these settings."
+msgstr ""
+
