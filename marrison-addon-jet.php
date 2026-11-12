@@ -1,8 +1,9 @@
 <?php
 /**
  * Plugin Name: Marrison Addon JetEngine
+ * Plugin URI: https://github.com/marrisonlab/marrison-addon-jetengine
  * Description: Modular extensions for JetEngine listings, queries, dynamic fields, and WooCommerce products.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * Author: Angelo Marra
@@ -11,7 +12,7 @@
  * Domain Path: /languages
  * License: GPL-3.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
- * Update URI: false
+ * Update URI: https://github.com/marrisonlab/marrison-addon-jetengine
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -19,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 final class Marrison_Addon_Jet {
-	const VERSION = '1.0.0';
+	const VERSION = '1.0.1';
 	const OPTION = 'marrison_addon_jet_modules';
 	const PAGE = 'marrison_addon_jet';
 
@@ -214,3 +215,6 @@ final class Marrison_Addon_Jet {
 
 add_action( 'plugins_loaded', [ new Marrison_Addon_Jet(), 'boot' ] );
 register_deactivation_hook( __FILE__, [ 'Marrison_Addon_Jet', 'clear_elementor_cache' ] );
+
+require_once __DIR__ . '/includes/class-marrison-addon-jet-updater.php';
+new Marrison_Addon_Jet_Updater( __FILE__ );

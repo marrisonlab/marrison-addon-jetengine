@@ -24,6 +24,12 @@ The two plugins have independent module settings. To move a module to MAJ, disab
 
 Query Fallback is designed for single-page Listing Grids using Posts Queries. It pauses when filters are applied or when the grid uses pagination, Load More, Lazy Load, archive mode, or randomized item counts. Listing Columns supports regular grids. Slider and masonry layouts are excluded.
 
+## Updates
+
+WordPress checks the latest stable release in [marrisonlab/marrison-addon-jetengine](https://github.com/marrisonlab/marrison-addon-jetengine/releases). Install version 1.0.1 or later once via **Plugins → Add New → Upload Plugin** to enable this check. If version 1.0.0 is already installed, use **Replace current with uploaded**.
+
+For each release, use a `vX.Y.Z` tag matching the plugin version and attach `marrison-addon-jetengine-X.Y.Z.zip`. The ZIP must contain the plugin under `marrison-addon-jet/` to preserve the installed plugin path. GitHub provides the attached ZIP's SHA-256 digest, which the updater checks before installing it.
+
 ## Languages
 
 English is the source language. Ukrainian (`uk`) and Arabic (`ar`) load according to the WordPress locale, including the dashboard user’s preferred language. The `languages` directory contains the POT template and the editable PO and compiled MO files.
